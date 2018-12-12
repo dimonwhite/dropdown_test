@@ -1,0 +1,164 @@
+{
+  "players": [
+    {
+      "label": "Pele",
+      "id": 1
+    },
+    {
+      "label": "Diego Maradona",
+      "id": 2
+    },
+    {
+      "label": "Ronaldo",
+      "id": 3
+    },
+    {
+      "label": "Paolo Maldini",
+      "id": 4
+    },
+    {
+      "label": "Lev Yashin",
+      "id": 5
+    },
+    {
+      "label": "Ronaldinho",
+      "id": 6
+    },
+    {
+      "label": "Cristiano Ronaldo",
+      "id": 7
+    },
+    {
+      "label": "Lionel Messi",
+      "id": 8
+    },
+    {
+      "label": "Johan Cruyff",
+      "id": 9
+    },
+    {
+      "label": "Marco van Basten",
+      "id": 10
+    },
+    {
+      "label": "Lothar Matthaus",
+      "id": 11
+    },
+    {
+      "label": "George Best",
+      "id": 12
+    },
+    {
+      "label": "Ruud Gullit",
+      "id": 13
+    },
+    {
+      "label": "Franco Baresi",
+      "id": 14
+    },
+    {
+      "label": "Thierry Henry",
+      "id": 15
+    },
+    {
+      "label": "Roberto Baggio",
+      "id": 16
+    },
+    {
+      "label": "Eusebio",
+      "id": 17
+    },
+    {
+      "label": "Carles Puyol",
+      "id": 18
+    },
+    {
+      "label": "Luís Figo",
+      "id": 19
+    },
+    {
+      "label": "Alessandro Del Piero",
+      "id": 20
+    },
+    {
+      "label": "Gary Lineker",
+      "id": 21
+    },
+    {
+      "label": "Bobby Moore",
+      "id": 22
+    },
+    {
+      "label": "Emilio Butragueno",
+      "id": 23
+    },
+    {
+      "label": "Fabio Cannavaro",
+      "id": 24
+    },
+    {
+      "label": "Ruud van Nistelrooy",
+      "id": 25
+    },
+    {
+      "label": "Paolo Maldini",
+      "id": 26
+    },
+    {
+      "label": "Ryan Giggs",
+      "id": 27
+    },
+    {
+      "label": "Javier Zanetti",
+      "id": 28
+    },
+    {
+      "label": "Dennis Bergkamp",
+      "id": 29
+    },
+    {
+      "label": "Alessandro Nesta",
+      "id": 30
+    },
+    {
+      "label": "Peter Schmeichel",
+      "id": 31
+    },
+    {
+      "label": "Hristo Stoichkov",
+      "id": 32
+    },
+    {
+      "label": "Neymar Jr",
+      "id": 33
+    },
+    {
+      "label": "Rivaldo",
+      "id": 34
+    },
+    {
+      "label": "Raul",
+      "id": 35
+    },
+    {
+      "label": "Michael Laudrup",
+      "id": 36
+    },
+    {
+      "label": "Paul Scholes",
+      "id": 37
+    },
+    {
+      "label": "Laurent Blanc",
+      "id": 38
+    },
+    {
+      "label": "Gheorghe Hagi",
+      "id": 39
+    },
+    {
+      "label": "Fernando Hierro",
+      "id": 40
+    }
+  ]
+}
