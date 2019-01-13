@@ -48,7 +48,7 @@ function initDropdown(class_name){
     else if(temp_string != ''){
       dropdown_input.value = temp_string;
     }
-    setTimeout(function(){dropdown_select.innerHTML = '';}, 200);
+    setTimeout(function(){dropdown_select.innerHTML = ''}, 200);
   }
 
   function changeInput(){
@@ -59,60 +59,50 @@ function initDropdown(class_name){
 
   function getPlayers(input_value){
 
-    const url = 'http://localhost:3000/players';
+    var massiv = ["Pele", "Diego Maradona", "Ronaldo", "Paolo Maldini", "Lev Yashin", "Ronaldinho", "Cristiano Ronaldo", "Lionel Messi", "Johan Cruyff", "Marco van Basten", "Lothar Matthaus", "George Best", "Ruud Gullit", "Franco Baresi"]
 
-    fetch(url)
-    .then(function(response){
-      return response.json();
-    })
-    .then(function(data){
+    dropdown_select.innerHTML = '';
 
-      dropdown_select.innerHTML = '';
+    var i = 0;
 
-      var i = 0;
+    function findPlayers(){
+      var item = createNode('p');
 
-      function findPlayers(){
-        var item = createNode('p');
+      item.innerHTML = massiv[j];
 
-        item.innerHTML = data[j].label;
+      item.classList.add('dropdown_select_item');
 
-        item.classList.add('dropdown_select_item');
+      item.addEventListener("click", function(){
+        dropdown_input.value = this.innerHTML;
+        temp_string = this.innerHTML;
+      });
 
-        item.addEventListener("click", function(){
-          dropdown_input.value = this.innerHTML;
-          temp_string = this.innerHTML;
-        });
+      append(dropdown_select, item);
 
-        append(dropdown_select, item);
+      i++;
 
-        i++;
-
-        if( i>=5 ){
-          dropdown_select.classList.add('overflow');
-        }
-        else{
-          if(dropdown_select.classList.contains('overflow'))
-            dropdown_select.classList.remove('overflow');
-        }
+      if( i>=5 ){
+        dropdown_select.classList.add('overflow');
       }
+      else{
+        if(dropdown_select.classList.contains('overflow'))
+          dropdown_select.classList.remove('overflow');
+      }
+    }
 
-      for (var j = 0; j < data.length; j++) {
+    for (var j = 0; j < massiv.length; j++) {
 
-        var string = data[j].label;
+      var string = massiv[j];
 
-        if(input_value === undefined){
+      if(input_value === undefined){
+        findPlayers();
+      }
+      else{
+        if(string.toLowerCase().startsWith(input_value.toLowerCase())){
           findPlayers();
-        }
-        else{
-          if(string.toLowerCase().startsWith(input_value.toLowerCase())){
-            findPlayers();
-          } 
-        }
+        } 
       }
-    })
-    .catch(function(error) {
-      console.log('error');
-    });
+    }
   }
 
 
