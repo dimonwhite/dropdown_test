@@ -6,7 +6,19 @@ function append(parent, el){
   return parent.appendChild(el);
 }
 
-function initDropdown(class_name){
+if (!String.prototype.startsWith) {
+  Object.defineProperty(String.prototype, 'startsWith', {
+    enumerable: false,
+    configurable: false,
+    writable: false,
+    value: function(searchString, position) {
+      position = position || 0;
+      return this.indexOf(searchString, position) === position;
+    }
+  });
+}
+
+function initDropdown(massiv, class_name){
 
   if(class_name === undefined){
     class_name = 'main_dropdown';
@@ -38,7 +50,7 @@ function initDropdown(class_name){
     if(dropdown_input.value != ''){
       dropdown_input.value = '';
     }
-    getPlayers();
+    getPlayers(massiv);
   }
 
   function blurInput(){
@@ -54,12 +66,10 @@ function initDropdown(class_name){
   function changeInput(){
     var input_value = dropdown_input.value;
 
-    getPlayers(input_value);
+    getPlayers(massiv, input_value);
   }
 
-  function getPlayers(input_value){
-
-    var massiv = ["Pele", "Diego Maradona", "Ronaldo", "Paolo Maldini", "Lev Yashin", "Ronaldinho", "Cristiano Ronaldo", "Lionel Messi", "Johan Cruyff", "Marco van Basten", "Lothar Matthaus", "George Best", "Ruud Gullit", "Franco Baresi"]
+  function getPlayers(massiv, input_value){
 
     dropdown_select.innerHTML = '';
 
@@ -81,13 +91,6 @@ function initDropdown(class_name){
 
       i++;
 
-      if( i>=5 ){
-        dropdown_select.classList.add('overflow');
-      }
-      else{
-        if(dropdown_select.classList.contains('overflow'))
-          dropdown_select.classList.remove('overflow');
-      }
     }
 
     for (var j = 0; j < massiv.length; j++) {
@@ -103,9 +106,25 @@ function initDropdown(class_name){
         } 
       }
     }
+
+    if(dropdown_select.classList.contains('top'))
+      dropdown_select.classList.remove('top');
+
+    var distance = dropdown_select.getBoundingClientRect();
+
+    var bottom = document.documentElement.clientHeight - distance.top - dropdown_select.clientHeight;
+
+    console.log(bottom);
+
+    if( bottom < 0 ){
+      dropdown_select.classList.add('top');
+    }
+
   }
 
 
 }
 
-initDropdown();
+var massiv = ["Pele", "Diego Maradona", "Ronaldo", "Paolo Maldini", "Lev Yashin", "Ronaldinho", "Cristiano Ronaldo", "Lionel Messi", "Johan Cruyff", "Marco van Basten", "Lothar Matthaus", "George Best", "Ruud Gullit", "Franco Baresi"];
+
+initDropdown(massiv);

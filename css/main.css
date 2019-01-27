@@ -55,10 +55,14 @@ h1{
 .dropdown_select{
 	width: 100%;
 	max-height: 150px;
+	overflow-y: scroll;
+	position: absolute;
+    top: 30px;
 }
 
-.dropdown_select.overflow{
-	overflow-y: scroll;
+.dropdown_select.top{
+	bottom: 30px;
+	top: auto;
 }
 
 .dropdown_select_item{
@@ -93,7 +97,7 @@ h1{
     background-color: rgba(255, 135, 0, 0.47);
 } 
 
-.form_dropdown{
+.dropdown_input_block{
 	position: relative;
 }
 
