@@ -6,6 +6,11 @@ html, body{
 	color: #212121;
 }
 
+body{
+	-webkit-background-size: cover;
+	background-size: cover;
+}
+
 body *{
 	box-sizing: border-box;
 }
