@@ -9,6 +9,7 @@ html, body{
 body{
 	-webkit-background-size: cover;
 	background-size: cover;
+	background-attachment: fixed;
 }
 
 body *{
