@@ -27,11 +27,12 @@ function initDropdown(massiv, class_name){
 
     var temp_string = '';
 
-    document.querySelector('.open_dropdown').addEventListener("click", function(){
+    containers[i].querySelector('.open_dropdown').addEventListener("click", function(){
+      this.previousElementSibling.click();
       this.previousElementSibling.focus();
     });
 
-    containers[i].querySelector('.dropdown_input').addEventListener("focus", focusInput);
+    containers[i].querySelector('.dropdown_input').addEventListener("click", focusInput);
 
     containers[i].querySelector('.dropdown_input').addEventListener("blur", blurInput);
 
@@ -76,11 +77,10 @@ function initDropdown(massiv, class_name){
 
         item.innerHTML = massiv[j].label;
 
-        item.setAttribute('data-img', massiv[j].img)
+        item.setAttribute('data-img', massiv[j].img);
+        item.setAttribute('data-id', massiv[j].id);
 
         item.classList.add('dropdown_select_item');
-
-        item.style.display = 'none';
 
         item.addEventListener("click", function(){
           var input = this.parentNode.previousElementSibling.previousElementSibling;
@@ -103,16 +103,16 @@ function initDropdown(massiv, class_name){
 
       for (var j = 0; j < items.length; j++) {
 
-        items[j].style.display = 'none';
+        items[j].classList.remove('active');
 
         var string = items[j].innerText;
 
         if(input_value === undefined){
-          items[j].style.display = 'block';
+          items[j].classList.add('active');
         }
         else{
           if(string.toLowerCase().startsWith(input_value.toLowerCase())){
-            items[j].style.display = 'block';
+            items[j].classList.add('active');
           } 
         }
       }
